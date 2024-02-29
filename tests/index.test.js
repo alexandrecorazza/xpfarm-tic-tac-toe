@@ -10,8 +10,68 @@ test("should return false if the board is an array with a length other than 9", 
     expect(ticTacToe(['', '', ''])).toBe('Invalid board');
 });
 
-test("should return 'Player X wins' if the board is an array filled like ['X', 'X', 'X', '', '', '', '', '', '']", () => {
-    expect(ticTacToe(['X', 'X', 'X', '', '', '', '', '', ''])).toBe('Player X wins');
+test("should return 'Player X wins' if the board is an array filled like ['', '', '', 'X', 'X', 'X', '', '', '']", () => {
+    expect(ticTacToe(['', '', '', 'X', 'X', 'X', '', '', ''])).toBe('Player X wins');
+});
+
+test("should return 'Player X wins' if the board is an array filled like ['', '', '', '', '', '', 'X', 'X', 'X']", () => {
+    expect(ticTacToe(['', '', '', '', '', '', 'X', 'X', 'X'])).toBe('Player X wins');
+});
+
+test("should return 'Player X wins' if the board is an array filled like ['X', '', '', 'X', '', '', 'X', '', '']", () => {
+    expect(ticTacToe(['X', '', '', 'X', '', '', 'X', '', ''])).toBe('Player X wins');
+});
+
+test("should return 'Player X wins' if the board is an array filled like ['', 'X', '', '', 'X', '', '', 'X', '']", () => {
+    expect(ticTacToe(['', 'X', '', '', 'X', '', '', 'X', ''])).toBe('Player X wins');
+});
+
+test("should return 'Player X wins' if the board is an array filled like ['', '', 'X', '', '', 'X', '', '', 'X']", () => {
+    expect(ticTacToe(['', '', 'X', '', '', 'X', '', '', 'X'])).toBe('Player X wins');
+});
+
+test("should return 'Player X wins' if the board is an array filled like ['X', '', '', '', 'X', '', '', '', 'X']", () => {
+    expect(ticTacToe(['X', '', '', '', 'X', '', '', '', 'X'])).toBe('Player X wins');
+});
+
+test("should return 'Player X wins' if the board is an array filled like ['', '', 'X', '', 'X', '', 'X', '', '']", () => {
+    expect(ticTacToe(['', '', 'X', '', 'X', '', 'X', '', ''])).toBe('Player X wins');
+});
+
+test("should return 'Player O wins' if the board is an array filled like ['O', 'O', 'O', '', '', '', '', '', '']", () => {
+    expect(ticTacToe(['O', 'O', 'O', '', '', '', '', '', ''])).toBe('Player O wins');
+});
+
+test("should return 'Player O wins' if the board is an array filled like ['', '', '', 'O', 'O', 'O', '', '', '']", () => {
+    expect(ticTacToe(['', '', '', 'O', 'O', 'O', '', '', ''])).toBe('Player O wins');
+});
+
+test("should return 'Player O wins' if the board is an array filled like ['', '', '', '', '', '', 'O', 'O', 'O']", () => {
+    expect(ticTacToe(['', '', '', '', '', '', 'O', 'O', 'O'])).toBe('Player O wins');
+});
+
+test("should return 'Player O wins' if the board is an array filled like ['O', '', '', 'O', '', '', 'O', '', '']", () => {
+    expect(ticTacToe(['O', '', '', 'O', '', '', 'O', '', ''])).toBe('Player O wins');
+});
+
+test("should return 'Player O wins' if the board is an array filled like ['', 'O', '', '', 'O', '', '', 'O', '']", () => {
+    expect(ticTacToe(['', 'O', '', '', 'O', '', '', 'O', ''])).toBe('Player O wins');
+});
+
+test("should return 'Player O wins' if the board is an array filled like ['', '', 'O', '', '', 'O', '', '', 'O']", () => {
+    expect(ticTacToe(['', '', 'O', '', '', 'O', '', '', 'O'])).toBe('Player O wins');
+});
+
+test("should return 'Player O wins' if the board is an array filled like ['O', '', '', '', 'O', '', '', '', 'O']", () => {
+    expect(ticTacToe(['O', '', '', '', 'O', '', '', '', 'O'])).toBe('Player O wins');
+});
+
+test("should return 'Player O wins' if the board is an array filled like ['', '', 'O', '', 'O', '', 'O', '', '']", () => {
+    expect(ticTacToe(['', '', 'O', '', 'O', '', 'O', '', ''])).toBe('Player O wins');
+});
+
+test("should return 'Game ends with a draw' if the board is an array filled like ['X', 'O', 'X', 'O', 'O', 'X', 'X', 'X', 'O']", () => {
+    expect(ticTacToe(['X', 'O', 'X', 'O', 'O', 'X', 'X', 'X', 'O'])).toBe('Game ends with a draw');
 });
 
 test("should return true if function playerXWins receive a array filled like ['X', 'X', 'X', '', '', '', '', '', '']", () => {
