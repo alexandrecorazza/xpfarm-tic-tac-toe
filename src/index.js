@@ -67,13 +67,50 @@ const setWhichPlayerMovesNext = (counter) => {
   return counter % 2 === 0 ? 'X' : 'O' 
 }
 
+const availablePositionsOnBoard = (board) => {
+  return board.map((position, index) => ({player :position, index}))
+          .filter(position => position.player === '')
+          .map(position => position.index);
+}
+
+const playerMovesOnPosition = (board, availablePositionsOnBoard, player) => {
+  const boardPosition = Math.floor(Math.random() * availablePositionsOnBoard.length)
+
+  board[availablePositionsOnBoard[boardPosition]] = player;
+}
+
 const ticTacToe = (board) => {
+  for (let i = 0; !game(board).gameEnds; i++) {
+    console.log(`
+   ${board[0] || '-'} | ${board[1] || '-'} | ${board[2] || '-'}
+  -----------
+   ${board[3] || '-'} | ${board[4] || '-'} | ${board[5] || '-'}
+  -----------
+   ${board[6] || '-'} | ${board[7] || '-'} | ${board[8] || '-'}
+  `);
+    
+    const player = setWhichPlayerMovesNext(i);
+
+    playerMovesOnPosition(board, availablePositionsOnBoard(board), player);
+  }
+
+  console.log(`
+   ${board[0] || '-'} | ${board[1] || '-'} | ${board[2] || '-'}
+  -----------
+   ${board[3] || '-'} | ${board[4] || '-'} | ${board[5] || '-'}
+  -----------
+   ${board[6] || '-'} | ${board[7] || '-'} | ${board[8] || '-'}
+  `);
+
   return game(board).result;
 };
-  
+
+console.log(ticTacToe(['', '', '', '', '', '', '', '', '']));
+
 module.exports = {
   ticTacToe,
   playerXWins,
   playerOWins,
-  setWhichPlayerMovesNext
+  setWhichPlayerMovesNext,
+  availablePositionsOnBoard
 };

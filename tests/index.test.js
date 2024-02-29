@@ -2,7 +2,8 @@ const {
     ticTacToe,
     playerXWins,
     playerOWins,
-    setWhichPlayerMovesNext
+    setWhichPlayerMovesNext,
+    availablePositionsOnBoard
 } = require("../src/index");
 
 test("should return false if the board is an array with a length other than 9", () => {
@@ -31,4 +32,11 @@ test("should have Player X play next if the move is an even number.", () => {
 
 test("should have Player O play next if the move is an odd number.", () => {
     expect(setWhichPlayerMovesNext(1)).toBe('O');
+});
+
+test("should calculate available positions on the board.", () => {
+    const dummyBoard = ['X', 'O', 'X', '', 'X', '', 'O', 'X', ''];
+    const expectedAvailablePositions = [3, 5, 8];
+    
+    expect(availablePositionsOnBoard(dummyBoard)).toEqual(expectedAvailablePositions);
 });
