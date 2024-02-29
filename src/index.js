@@ -28,18 +28,52 @@ const playerOWins = (board) => {
     }
 }
 
-const ticTacToe = (board) => {
+const game = (board) => {
+  const emptyPosition = '';
+
   if (!Array.isArray(board) || board.length != 9) {
-    return false;
-  } else {
-    if (board[0] === 'X' && board[1] === 'X' && board[2] === 'X') {
-      return 'Player X wins'
+    return {
+      gameEnds: true,
+      result: 'Invalid board'
     }
   }
+
+  if (!board.includes(emptyPosition) && !playerXWins(board) && !playerOWins(board)) {
+    return {
+      gameEnds: true,
+      result: 'Game ends with a draw'
+    }
+  } else {
+    if (playerXWins(board)) {
+      return {
+        gameEnds: true,
+        result: 'Player X wins'
+      }
+    } else if (playerOWins(board)) {
+      return {
+        gameEnds: true,
+        result: 'Player O wins'
+      }
+    } else {
+      return {
+        gameEnds: false,
+        result: 'Game in progress'
+      }
+    }
+  }
+}
+
+const setWhichPlayerMovesNext = (counter) => {
+  return counter % 2 === 0 ? 'X' : 'O' 
+}
+
+const ticTacToe = (board) => {
+  return game(board).result;
 };
   
 module.exports = {
   ticTacToe,
   playerXWins,
-  playerOWins
+  playerOWins,
+  setWhichPlayerMovesNext
 };
