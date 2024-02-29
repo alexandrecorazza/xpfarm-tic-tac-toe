@@ -3,23 +3,16 @@
 **Label**  
 ✅ done 🚧 WIP ❌ ERROR
 
-**Example**
-TODO: Your task is to write a function called validSpacing() which checks if a string has valid spacing. The function should return either true or false.
+**Challenge**
+The exercise involves developing a Tic-Tac-Toe game strictly adhering to the TDD rules.
 
-* 'Hello world'   => true
-* ' Hello world'  => false
-* 'Hello world  ' => false
-* 'Hello  world'  => false
-* 'Hello'         => true
+## Domains
+- The game board is represented by an array of strings with length 9
+- Each position of the array represents the move of players X or O
+- Player X or O wins with a horizontal line
+- Player X or O wins with a vertical line
+- Player X or O wins with a diagonal line
+- Game ends with a draw (none of players X or O wins)
 
-Even though there are no spaces, it is still valid because none are needed:
-* 'Helloworld'    => true
-* 'Helloworld '   => false
-* ' '             => false
-* ''              => true
-
-# Podmodoro 1 🍅:
-Driver: Fulano
-Navigator: Ciclano
-
-1. The function must recever a paramether 🚧
+# Pomodoro 1 🍅:
+1. Make sure the input is an array with length 9 ✅

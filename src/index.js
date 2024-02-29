@@ -1,6 +1,7 @@
-const myFunction = () => {
+const ticTacToe = (board) => {
+  return !board;
 };
   
 module.exports = {
-  myFunction,
+  ticTacToe,
 };
